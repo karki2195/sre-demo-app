@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sre-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sre-demo
+  template:
+    metadata:
+      labels:
+        app: sre-demo
+    spec:
+      containers:
+      - name: sre-demo
+        image: karki2195/sre-demo:latest
+        ports:
+        - containerPort: 3000
